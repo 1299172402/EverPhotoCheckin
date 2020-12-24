@@ -18,7 +18,8 @@ const (
 
 var (
 	_headers = ghttp.Headers{
-		"user-agent":  "EverPhoto/2.8.0 (Android;28000;16s;28;tengxun_33_1)",
+		"user-agent":  "EverPhoto/2.8.0",
+		// "user-agent":  "EverPhoto/2.8.0 (Android;28000;16s;28;tengxun_33_1)",
 		"x-device-id": "02:00:00:00:00:00",
 		"application": "tc.everphoto",
 		"x-locked":    "1",
