@@ -4,7 +4,8 @@ on:
     branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # 北京时间每天8点0分
+    - cron: '30 19 * * *' # 0 0 是北京时间每天8点0分
+    # 现在UTC时间是19:30，北京时间是凌晨3:30
 
 jobs:
   checkin:
