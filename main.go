@@ -98,7 +98,7 @@ func main() {
 		log.Fatal("【时光相册】" + desp)
 	}
 
-	desp = fmt.Sprintf("你已连续签到%d天，累计获得空间%s，明天可白嫖%s，请继续保持(￣▽￣)",
+	desp = fmt.Sprintf("\n你已连续签到%d天\n累计获得空间%s\n明天可白嫖%s\n请继续保持(￣▽￣)",
 		cr.Continuity, cr.TotalReward, cr.TomorrowReward)
 	pushMessage(true, desp)
 	log.Print("【时光相册】" + desp)
