@@ -9,7 +9,7 @@ import (
 )
 
 func Push(scKey, text, desp string) error {
-	resp, err := ghttp.Get(fmt.Sprintf("https://sc.ftqq.com/%s.send", scKey),
+	resp, err := ghttp.Get(fmt.Sprintf("https://sctapi.ftqq.com/%s.send", scKey),
 		ghttp.WithQuery(ghttp.Params{
 			"text": text,
 			"desp": desp,
