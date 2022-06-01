@@ -1,7 +1,7 @@
 import requests
 import time
-import os
 import json
+import os
 
 def main():
     ts = int(time.time()*1000)
@@ -11,7 +11,6 @@ def main():
     params = '&'.join(f'{k}={v}' for k, v in data.items())
     url = baseurl + '?' + params
     headers = json.loads(os.environ['headers'])
-    res = requests.post(url, headers=headers, data='{}')
     res = json.loads(requests.post(url, headers=headers, data='{}').text)
     print(res)
     if res['data']['checkin_result']!=True:
