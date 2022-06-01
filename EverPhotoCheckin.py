@@ -12,7 +12,10 @@ def main():
     url = baseurl + '?' + params
     headers = json.loads(os.environ['headers'])
     res = requests.post(url, headers=headers, data='{}')
-    print(res.text)
+    res = json.loads(requests.post(url, headers=headers, data='{}').text)
+    print(res)
+    if res['data']['checkin_result']!=True:
+        raise Exception('Check-in ERROR')
 
 if __name__ == '__main__':
     main()
