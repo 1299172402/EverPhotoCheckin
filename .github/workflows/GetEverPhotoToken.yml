@@ -1,0 +1,34 @@
+name: GetEverPhotoToken
+
+on:
+  workflow_dispatch:
+    inputs:
+      mobile:
+        description: 'mobile'
+      password:
+        description: 'password'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout actions
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: pip install requests
+
+    - name: Run
+      run: |
+        echo "--- token ---"
+        python EverPhotoSign.py
+        echo "-------------"
+        echo "[WARNING] Please **REMOVE** this log after get token."
+      env: 
+        data: ${{ github.event.inputs.mobile }}
+        headers: ${{ github.event.inputs.password }}

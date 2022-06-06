@@ -26,5 +26,4 @@ jobs:
       run: |
         python EverPhotoCheckin.py
       env: 
-        data: ${{secrets.DATA}}
-        headers: ${{secrets.HEADERS}}
+        token: ${{secrets.TOKEN}}
