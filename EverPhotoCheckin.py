@@ -18,8 +18,8 @@ print('[签到状态]')
 print(res)
 
 # 签到报错
-# if res['data']['checkin_result']==False:
-#     raise Exception('CHECKIN ERROR')
+if res['data']['checkin_result']==False:
+    raise Exception('CHECKIN ERROR')
 
 # 延时
 time.sleep(5)
